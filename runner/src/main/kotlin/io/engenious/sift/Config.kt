@@ -125,11 +125,13 @@ data class Config(
         val UDID: UdidLists?,
         val androidSdkPath: String,
         val environmentVariables: Map<String, String> = emptyMap(),
-        val authorization: AuthorizationType,
-
-//        val username: String,
+        private val username: String? = null,
 //        @Deprecated("Will be replaced with pathToCertificate in 1.0") val password: String? = null,
-//        val pathToCertificate: String? = null,
+        private val pathToCertificate: String? = null,
+
+        val authorization: AuthorizationType = AuthorizationType("0", AuthorizationData(
+            username ?: "", null, pathToCertificate, null, null
+        )),
     ) {
 
         open class WithInjectedCentralNodeVars(
