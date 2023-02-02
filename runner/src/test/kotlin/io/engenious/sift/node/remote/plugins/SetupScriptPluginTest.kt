@@ -33,7 +33,7 @@ class SetupScriptPluginTest {
     private val expectedPackage = "pkg"
     private val expectedClass = "clazz"
     private val expectedMethodWithUnsafeChars = "methodWithUnsafeCharacters-<>!#;"
-    private val expectedFullReference = "${expectedPackage}.${expectedClass}#${expectedMethodWithUnsafeChars}"
+    private val expectedFullReference = "${expectedPackage}/${expectedClass}#${expectedMethodWithUnsafeChars}"
 
     private val expectedSdkDir: File by lazy {
         tempDir.newFolder("sdk")
